@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "f9e28c8b-8223-4887-a23f-c1a3f0009473",
+		"name": "votacao-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Criar pauta",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "sellerId",
+						"value": "08f9abca-c974-11ed-afa1-0242ac120002",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"descricao\": \"Pauta A\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/pautas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"pautas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "abrir-sessao-pauta",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "sellerId",
+						"value": "08f9abca-c974-11ed-afa1-0242ac120002",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dataHorainicio\": \"23/03/2023 22:45\",\n    \"dataHorafim\": \"23/03/2023 22:55\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/pautas/1/abrir-sessao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"pautas",
+						"1",
+						"abrir-sessao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "criar associado",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "sellerId",
+						"value": "08f9abca-c974-11ed-afa1-0242ac120002",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"GAbriel\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/associados",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"associados"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "votar pauta",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "sellerId",
+						"value": "08f9abca-c974-11ed-afa1-0242ac120002",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"GAbriel\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/associados/1/votar-pauta/1?voto=Sim",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"associados",
+						"1",
+						"votar-pauta",
+						"1"
+					],
+					"query": [
+						{
+							"key": "voto",
+							"value": "Sim"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "resultado-votacao",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/pautas/1/resultado-votacao",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"pautas",
+						"1",
+						"resultado-votacao"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
